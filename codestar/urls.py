@@ -16,9 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from blog.views import blog_hello
+from blog import views as blog_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('blog', blog_hello),
+    path('blog/', blog_views.blog_hello, name="blog"), # the app urls are loaded as the main urls
 ]
